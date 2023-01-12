@@ -5,11 +5,16 @@ import { InputDropDownContainer } from './styles.SearchingContainer';
 
 function SearchingContainer() {
   const [searchResult, setSearchResult] = useState<string[]>(['']);
+  const [arrowNow, setArrowNow] = useState(0);
 
   return (
     <InputDropDownContainer>
-      <SerchingInput setSearchResult={setSearchResult} />
-      <DropDown searchResult={searchResult} />
+      <SerchingInput
+        setSearchResult={setSearchResult}
+        arrowNow={arrowNow}
+        setArrowNow={setArrowNow}
+      />
+      <DropDown searchResult={searchResult} arrowNow={arrowNow} />
     </InputDropDownContainer>
   );
 }

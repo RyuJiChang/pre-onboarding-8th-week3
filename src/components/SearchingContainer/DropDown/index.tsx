@@ -1,7 +1,8 @@
 import ResultList from './ResultList';
 import { InputContainer } from './styles.DropDown';
 
-function DropDown({ searchResult }: { searchResult: string[] }) {
+function DropDown({ searchResult, arrowNow }: { searchResult: string[]; arrowNow: number }) {
+  console.log(arrowNow);
   return (
     <InputContainer>
       {searchResult.length ? (
