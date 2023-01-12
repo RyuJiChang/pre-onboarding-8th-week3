@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 // import { THEME } from '../../constants';
 
-const DropDown = styled.div`
-  width: 100px;
-  height: 100px;
-  margin-top: 2em;
-  background-color: gray;
+const InputDropDownContainer = styled.div`
+  > div {
+    :last-child {
+      display: none;
+    }
+  }
+  :focus-within {
+    > div {
+      :last-child {
+        display: block;
+      }
+    }
+  }
 `;
-export { DropDown };
+export { InputDropDownContainer };

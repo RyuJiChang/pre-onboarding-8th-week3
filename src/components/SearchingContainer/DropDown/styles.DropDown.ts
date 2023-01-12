@@ -1,36 +1,17 @@
 import styled from 'styled-components';
-import { THEME } from '../../../constants';
+// import { THEME } from '../../../constants';
 
 const InputContainer = styled.div`
   width: 32em;
-  height: 4.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: white;
-  border-radius: ${THEME.RADIUS};
-  :focus-within {
-    outline: 2px solid ${THEME.ButtonColor};
-  }
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
 `;
-const Input = styled.input`
-  width: 22em;
-  margin: 0 1em;
-  font-size: large;
-  border: none;
-  :focus {
-    outline: none;
-  }
+const ResultList = styled.div`
+  width: 32em;
+  margin: 1em;
 `;
-const SearchingButton = styled.button`
-  width: 48px;
-  height: 48px;
-  margin: 0 0.5em;
-  background-color: ${THEME.ButtonColor};
-  border-radius: ${THEME.RADIUS};
-  border: none;
-  :active {
-    border: none;
-  }
-`;
-export { InputContainer, Input, SearchingButton };
+export { InputContainer, ResultList };

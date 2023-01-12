@@ -1,10 +1,14 @@
-import { InputContainer, Input, SearchingButton } from './styles.DropDown';
+import ResultList from './ResultList';
+import { InputContainer } from './styles.DropDown';
 
-function DropDown() {
+function DropDown({ searchResult }: { searchResult: string[] }) {
   return (
     <InputContainer>
-      <Input />
-      <SearchingButton />
+      {searchResult.length ? (
+        searchResult.map((el) => <ResultList text={el} />)
+      ) : (
+        <div>검색어 없음</div>
+      )}
     </InputContainer>
   );
 }

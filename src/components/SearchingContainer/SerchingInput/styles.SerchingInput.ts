@@ -4,6 +4,7 @@ import { THEME } from '../../../constants';
 const InputContainer = styled.div`
   width: 32em;
   height: 4em;
+  margin-bottom: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
