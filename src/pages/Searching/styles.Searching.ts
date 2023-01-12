@@ -17,10 +17,4 @@ const Header = styled.h1`
   line-height: 1.7em;
 `;
 
-const DropDown = styled.div`
-  width: 100px;
-  height: 100px;
-  margin-top: 2em;
-  background-color: gray;
-`;
-export { Container, Header, DropDown };
+export { Container, Header };
