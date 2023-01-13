@@ -3,11 +3,14 @@ import { getSearchedList } from '../../../apis';
 import { InputContainer, Input, SearchingButton } from './styles.SerchingInput';
 
 type Dispatcher<S> = Dispatch<SetStateAction<S>>;
+
 function SerchingInput({
+  searchResultLength,
   setSearchResult,
   arrowNow,
   setArrowNow,
 }: {
+  searchResultLength: number;
   setSearchResult: Dispatcher<string[]>;
   arrowNow: number;
   setArrowNow: Dispatcher<number>;
@@ -15,8 +18,8 @@ function SerchingInput({
   const [searchText, setSearchText] = useState('');
 
   const changeSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setSearchText(e.target.value);
+    setArrowNow(0);
     if (e.target.value.length) {
       getSearchedList(e.target.value).then((el) => {
         setSearchResult(el);
@@ -30,7 +33,7 @@ function SerchingInput({
       ArrowDown: 1,
     };
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-      setArrowNow(Math.max(0, Math.min(7, arrowNow + arrowHaveToDo[e.key])));
+      setArrowNow(Math.max(0, Math.min(searchResultLength, arrowNow + arrowHaveToDo[e.key])));
     }
   };
 

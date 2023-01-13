@@ -14,6 +14,7 @@ function SearchingContainer() {
   return (
     <InputDropDownContainer onBlur={arrowReset}>
       <SerchingInput
+        searchResultLength={searchResult.length}
         setSearchResult={setSearchResult}
         arrowNow={arrowNow}
         setArrowNow={setArrowNow}
