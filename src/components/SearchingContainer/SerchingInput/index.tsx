@@ -1,6 +1,7 @@
 import React, { useState, Dispatch, SetStateAction } from 'react';
 import { getSearchedList } from '../../../apis';
 import { InputContainer, Input, SearchingButton } from './styles.SerchingInput';
+import { TSearchResult } from '../../../types';
 
 type Dispatcher<S> = Dispatch<SetStateAction<S>>;
 
@@ -11,7 +12,7 @@ function SerchingInput({
   setArrowNow,
 }: {
   searchResultLength: number;
-  setSearchResult: Dispatcher<string[]>;
+  setSearchResult: Dispatcher<TSearchResult>;
   arrowNow: number;
   setArrowNow: Dispatcher<number>;
 }) {
@@ -22,10 +23,10 @@ function SerchingInput({
     setArrowNow(0);
     if (e.target.value.length) {
       getSearchedList(e.target.value).then((el) => {
-        setSearchResult(el);
+        setSearchResult({ keyword: e.target.value, searchResults: el });
       });
     } else {
-      setSearchResult([]);
+      setSearchResult({ keyword: '', searchResults: [] });
     }
   };
 
