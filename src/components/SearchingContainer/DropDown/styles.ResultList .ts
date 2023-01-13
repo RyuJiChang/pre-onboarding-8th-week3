@@ -6,6 +6,7 @@ interface Props {
 }
 
 const List = styled.div<Props>`
+  margin: 0.5em 1.5em;
   ${({ index, arrowNow }) =>
     index === arrowNow - 1 &&
     css`

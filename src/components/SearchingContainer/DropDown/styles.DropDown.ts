@@ -10,8 +10,11 @@ const InputContainer = styled.div`
   justify-content: center;
   background-color: white;
 `;
-const ResultList = styled.div`
-  width: 32em;
-  margin: 1em;
+
+const Suggestion = styled.div`
+  margin-left: 1em;
+  font-size: 14px;
+  color: gray;
 `;
-export { InputContainer, ResultList };
+
+export { InputContainer, Suggestion };

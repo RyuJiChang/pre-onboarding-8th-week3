@@ -24,6 +24,8 @@ function SerchingInput({
       getSearchedList(e.target.value).then((el) => {
         setSearchResult(el);
       });
+    } else {
+      setSearchResult([]);
     }
   };
 
