@@ -1,14 +1,20 @@
 import ResultList from './ResultList';
 import { InputContainer, Suggestion } from './styles.DropDown';
+import { TSearchResult } from '../../../types';
 
-function DropDown({ searchResult, arrowNow }: { searchResult: string[]; arrowNow: number }) {
+function DropDown({ searchResult, arrowNow }: { searchResult: TSearchResult; arrowNow: number }) {
   return (
     <InputContainer>
-      {searchResult.length ? (
+      {searchResult.searchResults.length ? (
         <>
           <Suggestion>추천 검색어</Suggestion>
-          {searchResult.map((el, index) => (
-            <ResultList index={index} text={el} arrowNow={arrowNow} />
+          {searchResult.searchResults.map((el, index) => (
+            <ResultList
+              index={index}
+              text={el}
+              keyword={searchResult.keyword}
+              arrowNow={arrowNow}
+            />
           ))}
         </>
       ) : (
