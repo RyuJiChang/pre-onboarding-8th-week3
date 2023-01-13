@@ -9,7 +9,12 @@ function DropDown({ searchResult, arrowNow }: { searchResult: TSearchResult; arr
         <>
           <Suggestion>추천 검색어</Suggestion>
           {searchResult.searchResults.map((el, index) => (
-            <ResultList index={index} text={el} arrowNow={arrowNow} />
+            <ResultList
+              index={index}
+              text={el}
+              keyword={searchResult.keyword}
+              arrowNow={arrowNow}
+            />
           ))}
         </>
       ) : (
