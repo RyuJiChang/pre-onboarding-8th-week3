@@ -7,8 +7,12 @@ function SearchingContainer() {
   const [searchResult, setSearchResult] = useState<string[]>(['']);
   const [arrowNow, setArrowNow] = useState(0);
 
+  const arrowReset = () => {
+    setArrowNow(0);
+  };
+
   return (
-    <InputDropDownContainer>
+    <InputDropDownContainer onBlur={arrowReset}>
       <SerchingInput
         setSearchResult={setSearchResult}
         arrowNow={arrowNow}

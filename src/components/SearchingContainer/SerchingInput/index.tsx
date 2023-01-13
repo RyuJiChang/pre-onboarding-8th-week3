@@ -15,6 +15,7 @@ function SerchingInput({
   const [searchText, setSearchText] = useState('');
 
   const changeSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
     setSearchText(e.target.value);
     if (e.target.value.length) {
       getSearchedList(e.target.value).then((el) => {
@@ -29,7 +30,6 @@ function SerchingInput({
       ArrowDown: 1,
     };
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-      console.log(Math.max(0, Math.min(7, arrowNow + arrowHaveToDo[e.key])));
       setArrowNow(Math.max(0, Math.min(7, arrowNow + arrowHaveToDo[e.key])));
     }
   };
